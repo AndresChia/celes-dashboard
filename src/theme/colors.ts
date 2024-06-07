@@ -24,7 +24,7 @@ export const colors = {
   warning: '#ff800a',
   error: '#cc0000',
   success: '#23a942',
-  info: '#4a80ff',
+  info: '#4a80ff'
 };
 
 // primary_3: "#ffc600",
