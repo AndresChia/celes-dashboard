@@ -1,23 +1,36 @@
-import React, { Component } from "react";
-import logo from "../../logo.svg";
+import { Component } from "react";
+import { Helmet } from "react-helmet";
+import { Header } from "../../components/header/header";
+import { Navbar } from "../../components/navBar/navbar";
 
 export default class Home extends Component {
+
+  breadcrumb: Navbar[] = [
+    { link: '/home', title: 'Home' },
+  ];
+
+
   render() {
+
+
+
     return (
-      <header>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Celes - Home</title>
+        </Helmet>
+        <Header breadcrumb={this.breadcrumb} />
+        <div className="p-4 xl:ml-80">
+          <div className="mt-12">
+            <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+              <div className="cursor-pointer">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }
