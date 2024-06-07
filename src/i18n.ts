@@ -7,17 +7,12 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   es: {
     translation: {
-      'menu': 'Menu'
+      'menu': { title: 'Menu', home: 'Home', airPollution: 'Contaminación del aire' }
     }
   },
   en: {
     translation: {
-      'menu': 'Menu'
-    }
-  },
-  fr: {
-    translation: {
-      'menu': 'Menu'
+      'menu': { title: 'Menu', home: 'Home' }
     }
   }
 };

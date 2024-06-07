@@ -1,6 +1,7 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Navbar } from "./navbar";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     open?: boolean;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export const NavBar = ({ open = false, setOpen, breadcrumb }: Props) => {
+    const { t } = useTranslation();
     return (
         <div className="p-4 xl:ml-80">
             <nav aria-label="nav" className="block w-full max-w-full bg-transparent text-primary_2 shadow-none transition-all px-0 py-1">
@@ -26,7 +28,7 @@ export const NavBar = ({ open = false, setOpen, breadcrumb }: Props) => {
                                                 <p
                                                     className="block antialiased font-sans text-sm leading-normal font-normal transition-all hover:text-blue-500 hover:opacity-100"
                                                 >
-                                                    {menu.title}
+                                                    {t(`menu.${menu.title}`)}
                                                 </p>
                                             </a>
 

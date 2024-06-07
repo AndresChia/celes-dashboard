@@ -5,14 +5,14 @@ import { Navbar } from "../../components/navBar/navbar";
 
 export default class Home extends Component {
 
+
   breadcrumb: Navbar[] = [
     { link: '/home', title: 'Home' },
   ];
 
 
+
   render() {
-
-
 
     return (
       <>
@@ -23,14 +23,20 @@ export default class Home extends Component {
         <Header breadcrumb={this.breadcrumb} />
         <div className="p-4 xl:ml-80">
           <div className="mt-12">
-            <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mb-12">
               <div className="cursor-pointer">
-
               </div>
             </div>
           </div>
         </div>
       </>
     );
+
+
+
+
+
   }
 }
+
+

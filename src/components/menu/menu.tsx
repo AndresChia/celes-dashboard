@@ -25,7 +25,7 @@ export const Menu = ({ open = false, setOpen }: Props) => {
 
                     <div className="flex items-center gap-4 py-6 px-8">
                         <h6 className="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-primary_1">
-                            {t('menu')}
+                            {t('menu.title')}
                         </h6>
                     </div>
                     <button
@@ -52,7 +52,8 @@ export const Menu = ({ open = false, setOpen }: Props) => {
                                         >
                                             <FontAwesomeIcon icon={menu.icon} />
                                             <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                                                {menu.title}
+
+                                                {t(`menu.${menu.title}`)}
                                             </p>
                                         </button>
                                     </a>
