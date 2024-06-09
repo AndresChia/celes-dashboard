@@ -6,8 +6,8 @@ export const ChartSkeleton = ({ width, height }: Props) => {
   return (
     <div
       style={{
-        height: height ? `${height}px` : '',
-        width: width ? `${width}px` : ''
+        height: height ? `${height}px` : '100%',
+        width: width ? `${width}px` : '100%'
       }}
       role="status"
       className={`${width ? `w-[${width}px]` : ''} ${height ? `h-[${height}px]` : ''} p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700`}>
