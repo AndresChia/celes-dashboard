@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/AndresChia/celes-dashboard).
+# React Project Readme for Air Quality, Precipitation Probability, and Current Weather Graphics
 
 ## Project Description
 
