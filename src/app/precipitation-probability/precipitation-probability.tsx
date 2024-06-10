@@ -26,18 +26,22 @@ export class PrecipitationProbability extends Component {
   componentDidMount() {
     if (navigator.geolocation) {
       this.setState({ location: true });
-      return navigator.geolocation.getCurrentPosition(
+      navigator.geolocation.getCurrentPosition(
         (location) => {
           const { latitude, longitude } = location.coords;
-          this._asyncRequest = this.loadMyAsyncData(latitude, longitude).then((response) => {
-            const days: { [days: string]: any } = {};
-            response.data.list.forEach((element: List) => {
-              let day = new Date(element.dt * 1000).toLocaleString('default', { day: 'numeric' });
-              this.calculateTempDay(days, day, { ...element.main, pop: element.pop * 100 });
+          this._asyncRequest = this.loadMyAsyncData(latitude, longitude)
+            .then((response) => {
+              const days: { [days: string]: any } = {};
+              response.data.list.forEach((element: List) => {
+                let day = new Date(element.dt * 1000).toLocaleString('default', { day: 'numeric' });
+                this.calculateTempDay(days, day, { ...element.main, pop: element.pop * 100 });
+              });
+              this._asyncRequest = null;
+              this.setState({ days: Object.values(days) });
+            })
+            .catch((error) => {
+              return { data: { list: [] } };
             });
-            this._asyncRequest = null;
-            this.setState({ days: Object.values(days) });
-          });
         },
         (error) => {
           this.setState({ error });

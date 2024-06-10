@@ -25,39 +25,51 @@ export class AirPollution extends Component {
   _asyncRequest!: any;
 
   componentDidMount() {
-    this._asyncRequest = this.loadMyAsyncData().then((response) => {
-      const aquiMonths: { [month: string]: any } = {};
-      const componentsMonths: { [month: string]: any } = {};
-      response.data.list.forEach((element: List) => {
-        let month = new Date(element.dt * 1000).toLocaleString('default', { month: 'long' });
-        const aqi = element.main.aqi;
-        const components = element.components;
-        this.calculatePromAqiMonth(aquiMonths, month, aqi);
-        this.calculatePromComponentsMonth(componentsMonths, month, components);
-      });
-      this._asyncRequest = null;
-      this.setState({
-        aquiMonths: Object.values(aquiMonths),
-        componentsMonths: Object.values(componentsMonths)
-      });
-    });
+    if (navigator.geolocation) {
+      this.setState({ location: true });
+      navigator.geolocation.getCurrentPosition(
+        (location) => {
+          const { latitude, longitude } = location.coords;
+          this._asyncRequest = this.loadMyAsyncData(latitude, longitude)
+            .then((response) => {
+              const aquiMonths: { [month: string]: any } = {};
+              const componentsMonths: { [month: string]: any } = {};
+              response.data.list.forEach((element: List) => {
+                let month = new Date(element.dt * 1000).toLocaleString('default', {
+                  month: 'long'
+                });
+                const aqi = element.main.aqi;
+                const components = element.components;
+                this.calculatePromAqiMonth(aquiMonths, month, aqi);
+                this.calculatePromComponentsMonth(componentsMonths, month, components);
+              });
+              this._asyncRequest = null;
+              this.setState({
+                aquiMonths: Object.values(aquiMonths),
+                componentsMonths: Object.values(componentsMonths)
+              });
+            })
+            .catch((error) => {
+              return { data: { list: [] } };
+            });
+        },
+        (error) => {
+          this.setState({ error });
+        }
+      );
+    }
+    this.setState({ location: false });
   }
 
-  loadMyAsyncData() {
-    const lat = 6.230833;
-    const lng = 75.590553;
+  loadMyAsyncData(latitude: number = 0, longitude: number = 0) {
     const date = new Date();
     const end = Math.floor(date.getTime() / 1000);
     date.setMonth(date.getMonth() - 2);
     let start = Math.floor(date.getTime() / 1000);
     const openKey = process.env.REACT_APP_OPEN_WEATHER_API_ID;
-    return axios
-      .get<AirPollutionI>(
-        `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lng}&start=${start}&end=${end}&appid=${openKey}`
-      )
-      .catch((error) => {
-        return { data: { list: [] } };
-      });
+    return axios.get<AirPollutionI>(
+      `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${latitude}&lon=${longitude}&start=${start}&end=${end}&appid=${openKey}`
+    );
   }
 
   calculatePromComponentsMonth = (
