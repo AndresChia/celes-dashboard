@@ -22,7 +22,7 @@ export const Table = ({ columns, data }: Props) => {
   };
 
   return (
-    <dl className="max-w-md text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+    <dl className="max-w-full text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
       {columns.map((column) => (
         <div key={column} className="flex flex-col pb-3">
           <dt className="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
