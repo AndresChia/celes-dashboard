@@ -46,7 +46,7 @@ export const LocationQuestion = ({ open = true }: Props) => {
               <h3 className="text-lg leading-6 font-medium text-gray-900"></h3>
               <div className="mt-2 px-7 py-3">
                 <p className="text-sm text-gray-500">
-                  Es necesario dar permisos de ubicación para continuar.
+                  {t('youNeedToGiveLocationPermissionsToContinue')}.
                 </p>
               </div>
               <div className="items-center px-4 py-3">
@@ -56,7 +56,7 @@ export const LocationQuestion = ({ open = true }: Props) => {
                   className="px-4 py-2 bg-primary_1 text-black
                             text-base font-medium rounded-md w-full
                             shadow-sm hover:bg-slate-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-300">
-                  Validar permisos
+                  {t('validatePermissions')}
                 </button>
               </div>
             </div>

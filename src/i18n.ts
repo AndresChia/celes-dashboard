@@ -11,9 +11,28 @@ const resources = {
         title: 'Menu',
         home: 'Home',
         airPollution: 'Contaminación del aire',
-        precipitationProbability: 'Probabilidad de precipitación'
+        precipitationProbability: 'Probabilidad de precipitación',
+        currentWheater: 'Clima actual'
       },
-      concentrationOf: 'Concentración de'
+      concentrationOf: 'Concentración de',
+      youNeedToGiveLocationPermissionsToContinue:
+        'Es necesario dar permisos de ubicación para continuar',
+      validatePermissions: 'Validar permisos',
+      table: {
+        name: 'Nombre',
+        'sys-country': 'Codigo de país',
+        'clouds-all': 'Porcentaje de nubosidad',
+        'main-feels_like': 'Sensación termica (Celsius)',
+        'main-temp': 'Temperatura (Celsius)',
+        'main-temp_min': 'Temperatura minima (Celsius)',
+        'main-temp_max': 'Temperatura maxima (Celsius)',
+        'main-pressure': 'Presión (hPa)',
+        'main-humidity': 'Humedad',
+        visibility: 'Visibilidad (m) (Maximo valor 10km)',
+        'wind-speed': 'Velocidad del viento (m/s)',
+        'wind-deg': 'Dirección del viento (Grados)',
+        'wind-gust': 'Rafaga'
+      }
     }
   },
   en: {

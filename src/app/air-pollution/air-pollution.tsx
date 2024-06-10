@@ -127,7 +127,7 @@ export class AirPollution extends Component {
         </Helmet>
         <Header breadcrumb={this.breadcrumb} />
         <div className="p-4 xl:ml-80">
-          <div className="mt-12">
+          <div className="mt-4">
             <div className="mb-12">
               <div className="cursor-pointer flex flex-col gap-3">
                 <div className="w:full p-3 relative  bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-2">

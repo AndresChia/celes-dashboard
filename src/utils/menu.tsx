@@ -15,5 +15,10 @@ export const MENUS = [
     title: 'precipitationProbability',
     icon: faCloudRain,
     link: '/precipitation-probability'
+  },
+  {
+    title: 'currentWheater',
+    icon: faCloudRain,
+    link: '/current-wheater'
   }
 ];
