@@ -77,7 +77,7 @@ export class PrecipitationProbability extends Component {
     const openKey = process.env.REACT_APP_OPEN_WEATHER_API_ID;
     return axios
       .get<PrecipitationProbabilityI>(
-        `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${openKey}`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${openKey}`
       )
       .catch((error) => {
         return { data: { list: [] } };

@@ -68,7 +68,7 @@ export class AirPollution extends Component {
     let start = Math.floor(date.getTime() / 1000);
     const openKey = process.env.REACT_APP_OPEN_WEATHER_API_ID;
     return axios.get<AirPollutionI>(
-      `http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${latitude}&lon=${longitude}&start=${start}&end=${end}&appid=${openKey}`
+      `https://api.openweathermap.org/data/2.5/air_pollution/history?lat=${latitude}&lon=${longitude}&start=${start}&end=${end}&appid=${openKey}`
     );
   }
 
