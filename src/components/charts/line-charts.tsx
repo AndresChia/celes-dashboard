@@ -14,6 +14,7 @@ import {
 import { Chart, LineI } from './chart';
 
 interface Props {
+  type?: string;
   data: Chart[];
   lines: LineI[];
   xAxis?: XAxisProps;
@@ -21,7 +22,7 @@ interface Props {
   tooltip?: TooltipProps<any, any>;
 }
 
-export const Charts = ({ data = [], lines, xAxis, yAxis, tooltip }: Props) => {
+export const LineCharts = ({ data = [], lines, xAxis, yAxis, tooltip }: Props) => {
   return (
     <ResponsiveContainer height="100%" width="100%">
       <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>

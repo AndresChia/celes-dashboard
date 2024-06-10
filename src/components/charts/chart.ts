@@ -7,3 +7,9 @@ export interface LineI {
   key: string;
   stroke?: string;
 }
+
+export interface AreaI {
+  key: string;
+  stroke?: string;
+  fill?: string;
+}

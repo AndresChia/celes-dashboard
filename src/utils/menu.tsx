@@ -1,4 +1,4 @@
-import { faHouse, faSmog } from '@fortawesome/free-solid-svg-icons';
+import { faCloudRain, faHouse, faSmog } from '@fortawesome/free-solid-svg-icons';
 
 export const MENUS = [
   {
@@ -10,5 +10,10 @@ export const MENUS = [
     title: 'airPollution',
     icon: faSmog,
     link: '/air-pollution'
+  },
+  {
+    title: 'precipitationProbability',
+    icon: faCloudRain,
+    link: '/precipitation-probability'
   }
 ];

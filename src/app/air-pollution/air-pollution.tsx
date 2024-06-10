@@ -31,13 +31,11 @@ export class AirPollution extends Component {
       response.data.list.forEach((element: List) => {
         let month = new Date(element.dt * 1000).toLocaleString('default', { month: 'long' });
         const aqi = element.main.aqi;
-        const date = new Date(element.dt * 1000);
         const components = element.components;
         this.calculatePromAqiMonth(aquiMonths, month, aqi);
         this.calculatePromComponentsMonth(componentsMonths, month, components);
       });
       this._asyncRequest = null;
-      debugger;
       this.setState({
         aquiMonths: Object.values(aquiMonths),
         componentsMonths: Object.values(componentsMonths)
@@ -85,13 +83,13 @@ export class AirPollution extends Component {
     // THE MONTH EXISTS
     if (aquiMonths[month]) {
       if (aquiMonths[month].min > aqi) {
-        let promedio = (aquiMonths[month].max + aqi) / 2;
+        let promedio = (aquiMonths[month].min + aqi) / 2;
         aquiMonths[month].min = aqi;
         aquiMonths[month].prom = promedio;
       }
 
       if (aquiMonths[month].max < aqi) {
-        let promedio = (aqi + aquiMonths[month].min) / 2;
+        let promedio = (aquiMonths[month].max + aqi) / 2;
         aquiMonths[month].max = aqi;
         aquiMonths[month].prom = promedio;
       }

@@ -1,14 +1,8 @@
-export const HandleLocation = () => {
+export const handleLocation = () => {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (location) => {
-        debugger;
-      },
-      (error) => {
-        debugger;
-      }
-    );
-  } else {
-    console.log('Geolocation not supported');
+    return navigator.geolocation.getCurrentPosition;
   }
+  console.log('Geolocation not supported');
+
+  return null;
 };

@@ -1,4 +1,4 @@
-import { Charts } from '../chart/charts';
+import { LineCharts } from '../charts/line-charts';
 import { ChartSkeleton } from '../skeletons/chart';
 
 interface Props {
@@ -13,7 +13,7 @@ export const AirPollutionChart = ({ data }: Props) => {
       {data == null ? (
         <ChartSkeleton height={350} />
       ) : (
-        <Charts
+        <LineCharts
           data={data}
           lines={[{ key: 'min', stroke: 'red' }, { key: 'max', stroke: 'green' }, { key: 'prom' }]}
           xAxis={{ dataKey: 'month' }}

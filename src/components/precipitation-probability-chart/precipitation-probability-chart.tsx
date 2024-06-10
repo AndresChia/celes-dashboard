@@ -1,19 +1,27 @@
-import { useState } from 'react';
-import { Charts } from '../chart/charts';
+import { AreaCharts } from '../charts/area-charts';
+import { ChartSkeleton } from '../skeletons/chart';
 
-//const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}, ...];
+interface Props {
+  data: any;
+}
 
-export const PrecipitationProbabilityChart = () => {
-  const [count, setCount] = useState(0);
+export const PrecipitationProbabilityChart = ({ data }: Props) => {
   return (
     <>
-      {
-        <Charts
-          data={[]}
-          lines={[{ key: 'min', stroke: 'red' }, { key: 'max', stroke: 'green' }, { key: 'prom' }]}
-          xAxis={{ dataKey: 'month' }}
+      {data == null ? (
+        <ChartSkeleton height={350} />
+      ) : (
+        <AreaCharts
+          data={data}
+          areas={[
+            { key: 'pop', stroke: 'gray', fill: 'gray' },
+            { key: 'temp', stroke: 'black' },
+            { key: 'temp_max', stroke: 'red' },
+            { key: 'temp_min', stroke: 'blue' }
+          ]}
+          xAxis={{ dataKey: 'day' }}
         />
-      }
+      )}
     </>
   );
 };

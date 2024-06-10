@@ -41,7 +41,7 @@ export const Menu = ({ open = false, setOpen }: Props) => {
               <li key={menu.title}>
                 <a href={menu.link} aria-current="page">
                   <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
+                    className="middle none text-start font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white w-full flex items-center gap-4 px-4 capitalize hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85]"
                     type="button">
                     <FontAwesomeIcon icon={menu.icon} />
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
