@@ -10,6 +10,7 @@ import {
 } from '../../components/air-pollution-chart/air-pollution-chart-interface';
 import { withTranslation } from 'react-i18next';
 import { AirPollutionComponentsChart } from '../../components/air-pollution-components-chart/air-pollution-components-chart';
+import { I18nTranslate } from '../../utils/i18n';
 
 export class AirPollution extends Component {
   state = {
@@ -133,7 +134,9 @@ export class AirPollution extends Component {
                 <div className="w:full p-3 relative  bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-2">
                   <div className="h-[400px]">
                     <div className="p-3">
-                      <h1>Air Quality Index</h1>
+                      <h1>
+                        <I18nTranslate i18n="airQualityIndex" />
+                      </h1>
                     </div>
                     <div className="h-[350px]">
                       <AirPollutionChart data={this.state.aquiMonths} />
@@ -149,29 +152,29 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Air Pollution Index levels scale
+                              <I18nTranslate i18n="airPollutionIndexLevelsScale" />
                             </h6>
                           </div>
                           <div className="flex gap-4 pb-8">
                             <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
                             <div>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Possible values: 1, 2, 3, 4, 5.
+                                <I18nTranslate i18n="possibleValues" /> 1, 2, 3, 4, 5.
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                1 = Good
+                                1 = <I18nTranslate i18n="good" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                2 = Fair
+                                2 = <I18nTranslate i18n="fair" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                3 = Moderate
+                                3 = <I18nTranslate i18n="moderate" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                4 = Poor
+                                4 = <I18nTranslate i18n="poor" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                5 = Very Poor
+                                5 = <I18nTranslate i18n="veryPoor" />
                               </p>
                             </div>
                           </div>
@@ -183,7 +186,9 @@ export class AirPollution extends Component {
                 <div className="w:full p-3 relative bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-2">
                   <div className="h-[400px]">
                     <div className="p-3">
-                      <h1>Air Quality Components</h1>
+                      <h1>
+                        <I18nTranslate i18n="airQualityComponents" />
+                      </h1>
                     </div>
                     <div className="h-[350px]">
                       <AirPollutionComponentsChart data={this.state.componentsMonths} />
@@ -199,7 +204,7 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of CO (Carbon monoxide), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> CO (Carbon monoxide), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -216,7 +221,7 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of NO (Nitrogen monoxide), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> NO (Nitrogen monoxide), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -230,7 +235,7 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of NO2 (Nitrogen dioxide), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> NO2 (Nitrogen dioxide), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -244,7 +249,7 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of O3 (Ozone), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> O3 (Ozone), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -258,7 +263,7 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of SO2 (Sulphur dioxide), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> SO2 (Sulphur dioxide), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -272,7 +277,8 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of PM2.5 (Fine particles matter), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> PM2.5 (Fine particles
+                              matter), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">
@@ -286,7 +292,8 @@ export class AirPollution extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Concentration of PM10 (Coarse particulate matter), μg/m3
+                              <I18nTranslate i18n="concentrationOf" /> PM10 (Coarse particulate
+                              matter), μg/m3
                             </h6>
                           </div>
                           <div className="flex gap-4">

@@ -18,6 +18,26 @@ const resources = {
       youNeedToGiveLocationPermissionsToContinue:
         'Es necesario dar permisos de ubicación para continuar',
       validatePermissions: 'Validar permisos',
+      airQualityIndex: 'Índice de calidad del aire',
+      airPollutionIndexLevelsScale: 'Escala de niveles del índice de contaminación del aire',
+      possibleValues: 'Valores posibles',
+      good: 'Bueno',
+      fair: 'Justo',
+      moderate: 'moderado',
+      poor: 'Malo',
+      veryPoor: 'Muy malo',
+      airQualityComponents: 'Componentes de la calidad del aire',
+      precipitationProbabilityAndTemperatures: 'Probabilidad de precipitación y temperaturas',
+      probabilityOfPrecipitation: 'Probabilidad de precipitación',
+      temperatures: 'Temperaturas',
+      minimumTemperatureCelsiusAtTheMomentOfCalculation:
+        'Temperatura mínima (Centígrados) en el momento del cálculo',
+      maximumTemperatureCelsiusAtTheMomentOfCalculation:
+        'Temperatura máxima (Centígrados) en el momento del cálculo',
+      temperatureCelsius: 'Temperatura (Centígrados)',
+      WhereXXisEqualToXXX: 'Donde {{param1}} es igual a {{param2}}%',
+      theValuesOfTheParameterVaryBetweenXXandXXX:
+        'Los valores del parámetro varían entre {{param1}} y {{param2}}%',
       table: {
         name: 'Nombre',
         'sys-country': 'Codigo de país',

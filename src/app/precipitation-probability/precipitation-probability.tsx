@@ -9,6 +9,7 @@ import {
   List,
   PrecipitationProbabilityI
 } from '../../components/precipitation-probability-chart/precipitation-probability-interface';
+import { I18nTranslate } from '../../utils/i18n';
 
 export class PrecipitationProbability extends Component {
   breadcrumb: Navbar[] = [
@@ -105,7 +106,9 @@ export class PrecipitationProbability extends Component {
                 <div className="w:full p-3 relative  bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-2">
                   <div className="h-[400px]">
                     <div className="p-3">
-                      <h1>Precipitation Probability And Temperatures </h1>
+                      <h1>
+                        <I18nTranslate i18n="precipitationProbabilityAndTemperatures" />
+                      </h1>
                     </div>
                     <div className="h-[350px]">
                       <PrecipitationProbabilityChart data={this.state.days} />
@@ -121,20 +124,29 @@ export class PrecipitationProbability extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Probability of precipitation
+                              <I18nTranslate i18n="probabilityOfPrecipitation" />
                             </h6>
                           </div>
                           <div className="flex gap-4 pb-8">
                             <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
                             <div>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                The values of the parameter vary between 0 and 100
+                                <I18nTranslate
+                                  i18n="theValuesOfTheParameterVaryBetweenXXandXXX"
+                                  params={{ param1: '0', param2: '100' }}
+                                />{' '}
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Where 0 is equal to 0%
+                                <I18nTranslate
+                                  i18n="WhereXXisEqualToXXX"
+                                  params={{ param1: '0', param2: '0' }}
+                                />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Where 100 is equal to 100%
+                                <I18nTranslate
+                                  i18n="WhereXXisEqualToXXX"
+                                  params={{ param1: '100', param2: '100' }}
+                                />
                               </p>
                             </div>
                           </div>
@@ -146,20 +158,20 @@ export class PrecipitationProbability extends Component {
                           <div className="flex items-center  gap-4">
                             <span className="relative z-[2] w-max flex-shrink-0 overflow-hidden rounded-full bg-gray-900 p-1.5 text-white"></span>
                             <h6 className="block font-sans text-base antialiased font-semibold leading-none tracking-normal text-blue-gray-900">
-                              Temperatures
+                              <I18nTranslate i18n="temperatures" />
                             </h6>
                           </div>
                           <div className="flex gap-4 pb-8">
                             <span className="flex-shrink-0 invisible h-full pointer-events-none"></span>
                             <div>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Minimum temperature (Celsius) at the moment of calculation
+                                <I18nTranslate i18n="minimumTemperatureCelsiusAtTheMomentOfCalculation" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Maximum temperature (Celsius) at the moment of calculation
+                                <I18nTranslate i18n="maximumTemperatureCelsiusAtTheMomentOfCalculation" />
                               </p>
                               <p className="block font-sans text-sm antialiased font-normal leading-normal text-gray-600">
-                                Temperature (Celsius)
+                                <I18nTranslate i18n="temperatureCelsius" />
                               </p>
                             </div>
                           </div>
